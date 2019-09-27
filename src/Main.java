@@ -34,13 +34,13 @@ public class Main {
 		}
 		else if(str.indexOf("自治区")!=-1)
 		{
-			province=str.substring(0, str.indexOf("自治区")+1);
-			str=str.substring(str.indexOf("自治区")+1);
+			province=str.substring(0, str.indexOf("自治区")+3);
+			str=str.substring(str.indexOf("自治区")+3);
 		}
 		else if(str.indexOf("行政区")!=-1)
 		{
-			province=str.substring(0, str.indexOf("行政区")+1);
-			str=str.substring(str.indexOf("行政区")+1);
+			province=str.substring(0, str.indexOf("行政区")+3);
+			str=str.substring(str.indexOf("行政区")+3);
 		}	
 		else if(str.indexOf("北京")!=-1)
 			province="北京";
@@ -65,11 +65,11 @@ public class Main {
 			city=str.substring(0, str.indexOf("岛")+1);
 			str=str.substring(str.indexOf("岛")+1);
 		}else if(str.indexOf("自治州")!=-1){
-			city=str.substring(0, str.indexOf("自治州")+1);
-			str=str.substring(str.indexOf("自治州")+1);
+			city=str.substring(0, str.indexOf("自治州")+3);
+			str=str.substring(str.indexOf("自治州")+3);
 		}else if(str.indexOf("地区")!=-1){
-			city=str.substring(0, str.indexOf("地区")+1);
-			str=str.substring(str.indexOf("地区")+1);
+			city=str.substring(0, str.indexOf("地区")+2);
+			str=str.substring(str.indexOf("地区")+2);
 		}else if(str.indexOf("盟")!=-1){
 			city=str.substring(0, str.indexOf("盟")+1);
 			str=str.substring(str.indexOf("盟")+1);
@@ -185,7 +185,7 @@ public class Main {
 		if (num == null || num.length() == 0) {
 			return "";
 		}
-		Pattern pattern = Pattern.compile("(?<!\\d)(?:(?:1[358]\\d{9})|(?:861[358]\\d{9}))(?!\\d)");
+		Pattern pattern = Pattern.compile("\\d{11}");
 		Matcher matcher = pattern.matcher(num);
 		StringBuffer bf = new StringBuffer(64);
 		while (matcher.find()) {
