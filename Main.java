@@ -127,8 +127,11 @@ public class Main {
 		{
 			town=str.substring(0, str.indexOf("镇")+1);
 			str=str.substring(str.indexOf("镇")+1);
+		}else if(str.indexOf("乡")!=-1)
+		{
+			town=str.substring(0, str.indexOf("乡")+1);
+			str=str.substring(str.indexOf("乡")+1);
 		}
-		
 		if(flag.equals("1")) {
 		row.put("province", province == null ? "" : province.trim());		
 		row.put("city", city == null ? "" : city.trim());		
@@ -150,6 +153,9 @@ public class Main {
 			}else if(str.indexOf("巷")!=-1){
 				way=str.substring(0, str.indexOf("巷")+1);
 				str=str.substring(str.indexOf("巷")+1);
+			}else if(str.indexOf("村")!=-1){
+				way=str.substring(0, str.indexOf("村")+1);
+				str=str.substring(str.indexOf("村")+1);
 			}
 			
 			
